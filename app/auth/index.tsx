@@ -29,13 +29,13 @@ export default function AuthScreen() {
       <View style={styles.buttonContainer}>
         <Button
           title="Sign Up"
-          onPress={() => router.push("/auth/signup" as any)}
+          onPress={() => router.push("/auth/signup")}
           style={styles.button}
           size="large"
         />
         <Button
           title="Log In"
-          onPress={() => router.push("/auth/login" as any)}
+          onPress={() => router.push("/auth/login")}
           style={styles.button}
           variant="outline"
           size="large"

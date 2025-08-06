@@ -21,8 +21,8 @@ function RootLayoutNav() {
       <Stack.Screen name="welcome" options={{ headerShown: false }} />
       <Stack.Screen name="auth" options={{ headerShown: false }} />
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-      <Stack.Screen name="practice/session" options={{ headerShown: false }} />
-      <Stack.Screen name="tests/exam" options={{ headerShown: false }} />
+      <Stack.Screen name="practice" options={{ headerShown: false }} />
+      <Stack.Screen name="tests" options={{ headerShown: false }} />
     </Stack>
   );
 }

@@ -139,7 +139,7 @@ export default function DashboardScreen() {
               progress={getSubjectProgress(subject)}
               onPress={() =>
                 router.push({
-                  pathname: "/practice/subject" as any,
+                  pathname: "/practice/subject",
                   params: { subject },
                 })
               }
@@ -172,7 +172,7 @@ export default function DashboardScreen() {
               test={test}
               onPress={() =>
                 router.push({
-                  pathname: "/tests/details" as any,
+                  pathname: "/tests/details",
                   params: { id: test.id },
                 })
               }

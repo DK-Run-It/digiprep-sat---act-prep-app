@@ -169,7 +169,7 @@ export default function PracticeScreen() {
             style={styles.optionCard}
             onPress={() =>
               router.push({
-                pathname: "/practice/session" as any,
+                pathname: "/practice/session",
                 params: { testType: activeTab.toUpperCase(), mode: "adaptive" },
               })
             }
@@ -185,7 +185,7 @@ export default function PracticeScreen() {
             style={styles.optionCard}
             onPress={() =>
               router.push({
-                pathname: "/practice/session" as any,
+                pathname: "/practice/session",
                 params: { testType: activeTab.toUpperCase(), mode: "timed" },
               })
             }
@@ -203,7 +203,7 @@ export default function PracticeScreen() {
             style={styles.optionCard}
             onPress={() =>
               router.push({
-                pathname: "/practice/session" as any,
+                pathname: "/practice/session",
                 params: { testType: activeTab.toUpperCase(), mode: "weak-areas" },
               })
             }
