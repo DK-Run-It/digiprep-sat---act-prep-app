@@ -78,7 +78,7 @@ export default function DashboardScreen() {
         </View>
         <TouchableOpacity
           style={styles.profileButton}
-          onPress={() => router.push("/(tabs)/profile")}
+          onPress={() => router.push("/profile")}
         >
           <Image
             source={{
@@ -120,7 +120,7 @@ export default function DashboardScreen() {
           <Text style={styles.sectionTitle}>Recommended Practice</Text>
           <TouchableOpacity
             style={styles.seeAllButton}
-            onPress={() => router.push("/(tabs)/practice")}
+            onPress={() => router.push("/practice")}
           >
             <Text style={styles.seeAllText}>See All</Text>
             <ArrowRight size={16} color={Colors.primary} />
@@ -154,7 +154,7 @@ export default function DashboardScreen() {
           <Text style={styles.sectionTitle}>Practice Tests</Text>
           <TouchableOpacity
             style={styles.seeAllButton}
-            onPress={() => router.push("/(tabs)/tests")}
+            onPress={() => router.push("/tests")}
           >
             <Text style={styles.seeAllText}>See All</Text>
             <ArrowRight size={16} color={Colors.primary} />
@@ -190,7 +190,7 @@ export default function DashboardScreen() {
         <View style={styles.actionsContainer}>
           <TouchableOpacity
             style={styles.actionCard}
-            onPress={() => router.push("/(tabs)/practice")}
+            onPress={() => router.push("/practice")}
           >
             <BookOpen size={24} color={Colors.primary} />
             <Text style={styles.actionTitle}>Practice</Text>
@@ -201,7 +201,7 @@ export default function DashboardScreen() {
 
           <TouchableOpacity
             style={styles.actionCard}
-            onPress={() => router.push("/(tabs)/tests")}
+            onPress={() => router.push("/tests")}
           >
             <BarChart2 size={24} color={Colors.secondary} />
             <Text style={[styles.actionTitle, { color: Colors.secondary }]}>

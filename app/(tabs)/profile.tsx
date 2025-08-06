@@ -50,7 +50,7 @@ export default function ProfileScreen() {
           style: "destructive",
           onPress: async () => {
             await logout();
-            router.replace("/welcome");
+            router.replace("/welcome" as any);
           },
         },
       ],
@@ -85,7 +85,7 @@ export default function ProfileScreen() {
         <Text style={styles.name}>{user?.name}</Text>
         <Text style={styles.email}>{user?.email}</Text>
         <Text style={styles.userType}>
-          {user?.userType.charAt(0).toUpperCase() + user?.userType.slice(1)}
+          {user?.userType ? user.userType.charAt(0).toUpperCase() + user.userType.slice(1) : "Student"}
         </Text>
         
         <View style={styles.statsRow}>

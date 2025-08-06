@@ -21,7 +21,7 @@ export default function WelcomeScreen() {
   const router = useRouter();
 
   const handleGetStarted = () => {
-    router.push("/auth");
+    router.push("/auth" as any);
   };
 
   return (
@@ -86,7 +86,7 @@ export default function WelcomeScreen() {
 
             <TouchableOpacity
               style={styles.learnMoreButton}
-              onPress={() => router.push("/auth/login")}
+              onPress={() => router.push("/auth/login" as any)}
             >
               <Text style={styles.learnMoreText}>Already have an account?</Text>
               <ArrowRight size={16} color={Colors.white} />

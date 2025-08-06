@@ -198,7 +198,7 @@ export default function PracticeResultsScreen() {
                   style={styles.questionItem}
                   onPress={() =>
                     router.push({
-                      pathname: "/practice/question",
+                      pathname: "/practice/session" as any,
                       params: { questionId: question.questionId },
                     })
                   }

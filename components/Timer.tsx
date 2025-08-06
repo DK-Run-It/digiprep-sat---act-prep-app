@@ -24,7 +24,7 @@ export const Timer: React.FC<TimerProps> = ({
 }) => {
   const [timeRemaining, setTimeRemaining] = useState<number>(initialTime);
   const [isRunning, setIsRunning] = useState<boolean>(autoStart);
-  const timerRef = useRef<NodeJS.Timeout | null>(null);
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   useEffect(() => {
     if (isRunning) {
@@ -32,7 +32,7 @@ export const Timer: React.FC<TimerProps> = ({
         setTimeRemaining((prevTime) => {
           const newTime = prevTime - 1;
           if (newTime <= 0) {
-            clearInterval(timerRef.current as NodeJS.Timeout);
+            clearInterval(timerRef.current);
             setIsRunning(false);
             onTimeUp && onTimeUp();
             return 0;

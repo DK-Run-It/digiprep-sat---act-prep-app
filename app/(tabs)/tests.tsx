@@ -138,7 +138,7 @@ export default function TestsScreen() {
               test={test}
               onPress={() =>
                 router.push({
-                  pathname: "/tests/details",
+                  pathname: "/tests/details" as any,
                   params: { id: test.id },
                 })
               }
@@ -172,8 +172,8 @@ export default function TestsScreen() {
               score={getTestScore(test.id)}
               onPress={() =>
                 router.push({
-                  pathname: "/tests/results",
-                  params: { id: test.id },
+                  pathname: "/tests/details" as any,
+                  params: { id: test.id, completed: "true" },
                 })
               }
             />
