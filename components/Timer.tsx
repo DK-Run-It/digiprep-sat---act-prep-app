@@ -32,7 +32,9 @@ export const Timer: React.FC<TimerProps> = ({
         setTimeRemaining((prevTime) => {
           const newTime = prevTime - 1;
           if (newTime <= 0) {
-            clearInterval(timerRef.current);
+            if (timerRef.current) {
+              clearInterval(timerRef.current);
+            }
             setIsRunning(false);
             onTimeUp && onTimeUp();
             return 0;
