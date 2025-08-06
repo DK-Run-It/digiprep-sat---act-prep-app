@@ -3,6 +3,12 @@ import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import React, { useEffect } from "react";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
+import { AuthProvider } from "@/hooks/auth-store";
+import { UserProfileProvider } from "@/hooks/user-profile-store";
+import { AdaptiveProvider } from "@/hooks/adaptive-algorithm";
+import { QuestionsProvider } from "@/hooks/questions-store";
+import { PracticeProvider } from "@/hooks/practice-store";
+import { TestsProvider } from "@/hooks/tests-store";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -12,7 +18,11 @@ const queryClient = new QueryClient();
 function RootLayoutNav() {
   return (
     <Stack screenOptions={{ headerBackTitle: "Back" }}>
+      <Stack.Screen name="welcome" options={{ headerShown: false }} />
+      <Stack.Screen name="auth" options={{ headerShown: false }} />
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+      <Stack.Screen name="practice/session" options={{ headerShown: false }} />
+      <Stack.Screen name="tests/exam" options={{ headerShown: false }} />
     </Stack>
   );
 }
@@ -24,8 +34,20 @@ export default function RootLayout() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <GestureHandlerRootView>
-        <RootLayoutNav />
+      <GestureHandlerRootView style={{ flex: 1 }}>
+        <AuthProvider>
+          <UserProfileProvider>
+            <AdaptiveProvider>
+              <QuestionsProvider>
+                <PracticeProvider>
+                  <TestsProvider>
+                    <RootLayoutNav />
+                  </TestsProvider>
+                </PracticeProvider>
+              </QuestionsProvider>
+            </AdaptiveProvider>
+          </UserProfileProvider>
+        </AuthProvider>
       </GestureHandlerRootView>
     </QueryClientProvider>
   );
