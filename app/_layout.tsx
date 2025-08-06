@@ -9,6 +9,7 @@ import { AdaptiveProvider } from "@/hooks/adaptive-algorithm";
 import { QuestionsProvider } from "@/hooks/questions-store";
 import { PracticeProvider } from "@/hooks/practice-store";
 import { TestsProvider } from "@/hooks/tests-store";
+import { TestPrepContext } from "@/hooks/test-prep-store";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -23,6 +24,7 @@ function RootLayoutNav() {
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
       <Stack.Screen name="practice" options={{ headerShown: false }} />
       <Stack.Screen name="tests" options={{ headerShown: false }} />
+      <Stack.Screen name="testprep" options={{ headerShown: false }} />
     </Stack>
   );
 }
@@ -41,7 +43,9 @@ export default function RootLayout() {
               <QuestionsProvider>
                 <PracticeProvider>
                   <TestsProvider>
-                    <RootLayoutNav />
+                    <TestPrepContext>
+                      <RootLayoutNav />
+                    </TestPrepContext>
                   </TestsProvider>
                 </PracticeProvider>
               </QuestionsProvider>
