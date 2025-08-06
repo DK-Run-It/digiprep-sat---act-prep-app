@@ -114,3 +114,35 @@ export interface StudyPlan {
   }[];
   progress: number;
 }
+
+export type TestPrepCategory = 
+  | "time-management" 
+  | "question-patterns" 
+  | "elimination-strategies" 
+  | "stress-reduction" 
+  | "math-formulas" 
+  | "reading-strategies" 
+  | "grammar-rules" 
+  | "science-strategies";
+
+export type ExamType = "SAT" | "ACT" | "both";
+
+export interface TestPrepTip {
+  id: string;
+  title: string;
+  content: string;
+  category: TestPrepCategory;
+  examType: ExamType;
+  section?: SubjectArea;
+  difficulty?: QuestionDifficulty;
+  imageUrl?: string;
+}
+
+export interface FlashCard {
+  id: string;
+  front: string;
+  back: string;
+  category: TestPrepCategory;
+  examType: ExamType;
+  section?: SubjectArea;
+}
